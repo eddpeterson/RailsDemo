@@ -1,0 +1,18 @@
+development:
+  adapter: mongodb
+  host: localhost
+  database: bucket_dev
+
+test: &test
+  adapter: mongodb
+  host: localhost
+  database: bucket_test
+
+production:
+  adapter: mongodb
+  host: localhost
+  database: bucket_pord
+
+cucumber:
+  <<: *test
+
