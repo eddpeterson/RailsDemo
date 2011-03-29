@@ -12,7 +12,25 @@ Feature: Manage people
     And I should see "Diaz"
 	And I should see "Person was successfully created."
 	
-  Scenario: Register new person
+  Scenario: Require First name specified
     Given I am on the new person page
     And I press "Create"
     Then I should see "First name can't be blank"
+
+  Scenario: List people
+    Given the following people:
+      |first_name|last_name|
+      |Jack|Welch|
+      |Cameron|Diaz|
+    When I am on the people page
+	Then I should see the following people:
+      |First name|Last name|
+      |Jack|Welch|
+	  |Cameron|Diaz|
+	
+  
+  
+  
+  
+  
+  
